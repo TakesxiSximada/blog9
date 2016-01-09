@@ -134,6 +134,12 @@ Github Pagesはgh-pagesというブランチを作ることで公開されます
 (env) $ pip install ghp-import
 ```
 
+requirements.txtも更新しておきましょう。
+
+```
+(env) $ pip freeze > requirements.txt
+```
+
 `make github`でHTMLを生成してgh-pagesブランチにpushします。
 
 ```
