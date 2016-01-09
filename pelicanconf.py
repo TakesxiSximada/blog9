@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'TakesxiSximada'
-SITENAME = '...'
+SITENAME = 'sximada.2016'
 SITEURL = ''
 
 PATH = 'content'
@@ -26,13 +26,18 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('Twitter', 'https://twitter.com/TakesxiSximada'),
+    ('Facebook', 'https://www.facebook.com/takesxi.sximada'),
+    ('Github', 'https://github.com/TakesxiSximada'),
+    ('BitBucket', 'https://bitbucket.org/takesxi_sximada'),
+    ('about.me', 'https://about.me/TakesxiSximada'),
+)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 
 THEME = 'themes/pelican-twitchy'
