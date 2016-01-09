@@ -1,9 +1,12 @@
 machine:
   python:
-      version: 3.5.1
+      version: 3.5.0
 test:
   override:
     - make html
-  post:
-    - git commit -m "update gh-pages by circleci"
-    - git subtree push --prefix output origin gh-pages
+deployment:
+  release:
+    branch: master
+    commands:
+      - git commit -m "update gh-pages by circleci"
+      - git subtree push --prefix output origin gh-pages
