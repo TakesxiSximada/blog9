@@ -12,4 +12,5 @@ deployment:
       - git config user.email circleci
       - git add -f output
       - git commit -m "update gh-pages by circleci"
+      - git push :gp-pages
       - git subtree push -f --prefix output origin gh-pages
