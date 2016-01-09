@@ -155,6 +155,9 @@ machine:
   python:
       version: 3.5.0
 test:
+  pre:
+    - git submodule init
+    - git submodule update
   override:
     - make html
 deployment:
@@ -164,4 +167,5 @@ deployment:
       - git config user.name circleci
       - git config user.email circleci
       - make github
+
 ```
