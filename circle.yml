@@ -3,6 +3,7 @@ machine:
       version: 3.5.0
 test:
   pre:
+    - git submodule init
     - git submodule update
   override:
     - make html
