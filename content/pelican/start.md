@@ -128,21 +128,34 @@ $ make html
 (env) $ git push --set-upstream origin master
 ```
 
-Github Pagesはgh-pagesというブランチを作ることで公開されるので、gh-pagesブランチを作成します。gh-pagesブランチではoutputに出力されたHTMLがリポジトリの最上位のディレクトリに配置されるようにしたいので、`git subtree push --prefix output origin gh-pages`を使ってpushします。
+Github Pagesはgh-pagesというブランチを作ることで公開されます。Pelicanがscaffolding時に生成するMakefileは`make github`というコマンドが使えるようになっており、github pagesにdeployしてくれます。`make github`ではghp-importというコマンドが使われています。このコマンドはghp-importパッケージが提供しているのでインストールしておきます。
 
 ```
-(env) $ git add -f output/
-(env) $ git subtree push --prefix output origin gh-pages
+(env) $ pip install ghp-import
 ```
 
-# drone.ioにdeployさせる
-
-gh-pagesの更新は手動でやってもいいのですが、drone.ioにやらせることで手間を短縮できます。drone.ioの設定に次を追加します。
+`make github`でHTMLを生成してgh-pagesブランチにpushします。
 
 ```
-pip install -r requirements.txt --use-mirrors
-make html
-git add -f output/
-git commit -m "update gh-pages by drone.io"
-git subtree push --prefix output origin gh-pages
+(env) $ make github
+```
+
+# CircleCIにdeployさせる
+
+masterにpushしたときに`make github`を実行してdeployするようにします。circle.ymlは以下のように記述します。
+
+```
+machine:
+  python:
+      version: 3.5.0
+test:
+  override:
+    - make html
+deployment:
+  release:
+    branch: master
+    commands:
+      - git config user.name circleci
+      - git config user.email circleci
+      - make github
 ```
