@@ -13,4 +13,4 @@ deployment:
       - git add -f output
       - git commit -m "update gh-pages by circleci"
       - git push origin :gh-pages
-      - git subtree push -f --prefix output origin gh-pages
+      - git subtree push --prefix output origin gh-pages
