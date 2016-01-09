@@ -2,6 +2,8 @@ machine:
   python:
       version: 3.5.0
 test:
+  pre:
+    - git submodule update
   override:
     - make html
 deployment:
