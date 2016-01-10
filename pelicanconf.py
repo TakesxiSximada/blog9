@@ -41,3 +41,4 @@ DEFAULT_PAGINATION = 10
 
 
 THEME = 'themes/pelican-twitchy'
+STATIC_PATHS = ['static']
