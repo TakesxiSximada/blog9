@@ -14,7 +14,7 @@ circle.ymlに以下を書き込むと無視されるようになります。
 general:
   branches:
     ignore:
-      - /gh-pages\/.*/
+      - gh-pages
 ```
 
 参考にしたサイト

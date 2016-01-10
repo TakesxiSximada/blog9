@@ -4,7 +4,7 @@ machine:
 general:
   branches:
     ignore:
-      - /gh-pages\/.*/
+      - gh-pages
 test:
   pre:
     - git submodule init
