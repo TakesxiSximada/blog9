@@ -1,6 +1,10 @@
 machine:
   python:
       version: 3.5.0
+general:
+  branches:
+    ignore:
+      - /gh-pages\/.*/
 test:
   pre:
     - git submodule init
