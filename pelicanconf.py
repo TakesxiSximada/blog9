@@ -42,3 +42,5 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'themes/pelican-twitchy'
 STATIC_PATHS = ['static']
+
+GOOGLE_ANALYTICS = 'UA-72260316-1'  # Tracking ID
