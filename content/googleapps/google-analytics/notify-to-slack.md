@@ -1,5 +1,5 @@
 Title: GoogleAnalyticsの情報をSlackに通知する
-Date: 2016-01-10 19:00
+Date: 2016-01-21 19:00
 Category: GoogleApps
 Tags: GoogleAnalytics, Slack
 Author: TakesxiSximada
